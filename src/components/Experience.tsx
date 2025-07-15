@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const experiences = [
+const jobs = [
     {
         id: 0,
         role: "Software Developer",
@@ -46,7 +46,7 @@ export default function Experience() {
         <section id="experience" className="space-y-6">
             <h2 className="text-2xl font-bold">Experience</h2>
             <div className="flex flex-col space-y-8" onMouseLeave={onMouseLeave}>
-                {experiences.map((job) => (
+                {jobs.map((job) => (
                     <a key={job.id} href={job.link} target="_blank" onMouseEnter={() => onMouseEnter(job.id)}>
                         <div
                             className={`
@@ -56,8 +56,8 @@ export default function Experience() {
                             `}
                         >
                             <div>
-                                <p>{job.role} - {job.company} <i className="fa fa-external-link" aria-hidden="true"></i></p>
-                                <p className="text-sm text-slate-700">{job.period}</p>
+                                <p>{job.role} - {job.company} <i className="fa fa-external-link" aria-hidden="true" /></p>
+                                <p className="text-sm color-subheadline">{job.period}</p>
                             </div>
                             <ul className="list-disc ml-6">
                                 {job.bullets.map((bullet, i) => (
@@ -69,7 +69,7 @@ export default function Experience() {
                             <ul className="flex flex-wrap gap-3">
                                 {job.tags.map((tag, i) => (
                                     <li key={i}>
-                                        <span className="rounded-md bg-blue-50 px-2 py-1 text-sm font-medium text-blue-700 ring-1 ring-blue-700/10 ring-inset">
+                                        <span className="color-tag rounded-md px-2 py-1 text-sm font-medium ring-1 ring-inset">
                                             {tag}
                                         </span>
                                     </li>

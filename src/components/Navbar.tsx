@@ -24,7 +24,7 @@ export default function Navbar() {
         <header
             className={`
                 sticky top-0 z-50 flex px-16 items-center
-                bg-white/95 backdrop-blur
+                bg-white/90 dark:bg-gray-950/75 backdrop-blur
                 transition-all duration-300 ease-out
                 ${collapsed ? "h-18 shadow" : "h-[180px]"}
             `}
