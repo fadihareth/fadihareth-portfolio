@@ -15,10 +15,10 @@
     }
 
     .color-tag {
-        @apply bg-blue-50 text-blue-700 ring-blue-700/10 dark:bg-blue-950 dark:text-blue-100 dark:ring-blue-100/10
+        @apply bg-blue-50 text-blue-700 ring-blue-700/10 dark:bg-blue-950 dark:text-blue-100 dark:ring-blue-100/10;
     }
     
     .separator {
-        @apply inline-block h-[15px] min-h-[1em] w-0.5 bg-neutral-100 dark:bg-white/10;
+        @apply inline-block h-[15px] min-h-[1em] w-0.5 bg-neutral-300 dark:bg-white/40;
     }
 }
