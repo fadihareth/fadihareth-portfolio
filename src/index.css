@@ -11,7 +11,7 @@
 
 @layer components {
     .color-subheadline {
-        @apply text-slate-700 dark:text-slate-400;
+        @apply text-slate-500 dark:text-slate-400;
     }
 
     .color-tag {

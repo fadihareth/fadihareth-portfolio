@@ -12,7 +12,7 @@ const jobs = [
             "Collaborated in designing the backend and prototyping the frontend UI, ensuring a cohesive design between the iOS and Android app.",
             "Lead new initiatives by building web apps from scratch, allowing the company to expand into new markets by providing business partners dashboards for tracking analytics and stats.",
         ],
-        link: "https://apps.apple.com/ca/app/statrat-baseball/id506977885",
+        link: "https://www.statrat.ca",
         tags: ["SwiftUI", "Swift", "React", "TypeScript", "Vite"]
     },
     {
@@ -56,7 +56,9 @@ export default function Experience() {
                             `}
                         >
                             <div>
-                                <p>{job.role} - {job.company} <i className="fa fa-external-link" aria-hidden="true" /></p>
+                                <p className={`${hoverId === job.id && "text-blue-700 dark:text-blue-100"} font-semibold`}>
+                                    {job.role} - {job.company} <i className="fa fa-external-link" aria-hidden="true" />
+                                </p>
                                 <p className="text-sm color-subheadline">{job.period}</p>
                             </div>
                             <ul className="list-disc ml-6">
@@ -66,10 +68,10 @@ export default function Experience() {
                                     </li>
                                 ))}
                             </ul>
-                            <ul className="flex flex-wrap gap-3">
+                            <ul className="flex flex-wrap gap-2">
                                 {job.tags.map((tag, i) => (
                                     <li key={i}>
-                                        <span className="color-tag rounded-md px-2 py-1 text-sm font-medium ring-1 ring-inset">
+                                        <span className="color-tag rounded-4xl px-3 py-1 text-sm font-medium ring-1 ring-inset">
                                             {tag}
                                         </span>
                                     </li>
