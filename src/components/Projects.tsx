@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { isMobile } from 'react-device-detect';
 
 const projects = [
     {
@@ -114,6 +115,12 @@ export default function Projects() {
         }
     };
 
+    function onHover(v: boolean) {
+        if (!isMobile) {
+            setIsHoveringLink(v);
+        }
+    };
+
     const ArrowButton = ({ dir, isMobile }: { dir: 1 | -1, isMobile: boolean }) => {
         return (
             <button
@@ -176,8 +183,8 @@ export default function Projects() {
                                     href={projects[index].link}
                                     target="_blank"
                                     className="flex flex-col gap-1"
-                                    onMouseEnter={() => setIsHoveringLink(true)}
-                                    onMouseLeave={() => setIsHoveringLink(false)}
+                                    onMouseEnter={() => onHover(true)}
+                                    onMouseLeave={() => onHover(false)}
                                 >
                                     <div
                                         className={`

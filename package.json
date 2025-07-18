@@ -15,6 +15,7 @@
     "framer-motion": "^12.23.6",
     "postcss": "^8.5.6",
     "react": "^19.1.0",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
