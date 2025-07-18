@@ -1,6 +1,63 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
+const projects = [
+    {
+        id: 0,
+        title: "Damage Calculator",
+        headline: "Native iOS app for quick Pokémon damage calculations",
+        description: `
+            Individually developed an interactive calculator for a video game series as a native iOS app.
+            Compacted a feature-heavy app into an intuitive and mobile-friendly experience under Apple guidelines.
+            Still maintained after ${new Date().getFullYear() - 2021} years with updates introducing major
+            improvements and applying user feedback.
+        `,
+        link: "https://apps.apple.com/ca/app/damage-calculator/id1554958775",
+        videoLink: "https://www.youtube.com/embed/82AjCKzhnS4",
+        images: {
+            light: "src/assets/damage_calculator.png",
+            dark: "src/assets/damage_calculator_dark.png"
+        },
+        tags: ["SwiftUI", "Swift", "Python"]
+    },
+    {
+        id: 1,
+        title: "Statrat Baseball iOS App",
+        headline: "Social stat tracking platform for baseball players",
+        description: `
+            Took over full development of the native iOS app during 2024-25, adding new features such as
+            comment tagging, profile customization, media upload, in-app advertising, and more. Helped
+            modernize the app by prototyping and implementing UI redesigns, ensuring both the iOS
+            and Android app stayed consistent.
+
+        `,
+        link: "https://apps.apple.com/ca/app/statrat-baseball/id506977885",
+        videoLink: "https://www.youtube.com/embed/XTtXMZCfENw",
+        images: {
+            light: "src/assets/statrat_app.png",
+            dark: "src/assets/statrat_app.png"
+        },
+        tags: ["SwiftUI", "Swift"]
+    },
+    {
+        id: 2,
+        title: "Statrat Advertiser Dashboard",
+        headline: "Manage ad campaigns to run within the app",
+        description: `
+            Web app built from scratch giving customers a dashboard for creating ad campaigns to run within the
+            Statrat mobile app. Customers can customize the ad with templates and media uploads, and get a breakdown on their
+            ad's performance. Ads are generated as HTML templates allowing for easy embedding in both iOS and Android.
+        `,
+        link: "https://dashboard.statratapp.com",
+        videoLink: "https://www.youtube.com/embed/vhUt21N1vYA",
+        images: {
+            light: "src/assets/statrat_dashboard.png",
+            dark: "src/assets/statrat_dashboard_dark.png"
+        },
+        tags: ["React", "Vite", "TypeScript"]
+    }
+];
+
 // Handle animations when changing project
 const variants = {
     enter: (direction: number) => ({
@@ -23,43 +80,6 @@ const swipePower = (offset: number, velocity: number) => {
     return Math.abs(offset) * velocity;
 };
 
-const projects = [
-    {
-        id: 0,
-        title: "Damage Calculator",
-        headline: "Native iOS app for quick Pokémon damage calculations",
-        description: `
-            Individually developed an interactive calculator for a video game series as a native iOS app.
-            Compacted a feature-heavy app into an intuitive and mobile-friendly experience under Apple guidelines.
-            Still maintained after ${new Date().getFullYear() - 2021} years with updates introducing major improvements and applying user feedback.
-        `,
-        link: "https://apps.apple.com/ca/app/damage-calculator/id1554958775",
-        videoLink: "https://www.youtube.com/embed/82AjCKzhnS4",
-        images: {
-            light: "src/assets/damage_calculator.png",
-            dark: "src/assets/damage_calculator_dark.png"
-        },
-        tags: ["SwiftUI", "Swift", "Python"]
-    },
-    {
-        id: 1,
-        title: "Statrat Baseball iOS App",
-        headline: "Social stat tracking platform for baseball players",
-        description: `
-            Individually developed an interactive calculator for a video game series as a native iOS app.
-            Compacted a feature-heavy app into an intuitive and mobile-friendly experience under Apple guidelines.
-            Still maintained after ${new Date().getFullYear() - 2021} years with updates introducing major improvements and applying user feedback.
-        `,
-        link: "https://apps.apple.com/ca/app/statrat-baseball/id506977885",
-        videoLink: "https://www.youtube.com/embed/82AjCKzhnS4",
-        images: {
-            light: "src/assets/statrat-app.png",
-            dark: "src/assets/statrat-app.png"
-        },
-        tags: ["SwiftUI", "Swift"]
-    }
-]
-
 export default function Projects() {
     const [index, setIndex] = useState(0);
     const [direction, setDirection] = useState(0);
@@ -68,21 +88,19 @@ export default function Projects() {
     const [colorScheme, setColorScheme] = useState("light");
 
     useEffect(() => {
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => setColorScheme(e.matches ? 'dark' : 'light'));
-        setColorScheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener(
+            'change', e => setColorScheme(e.matches ? 'dark' : 'light')
+        );
+        setColorScheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         return () => {
             window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', () => { });
         }
     }, []);
 
     function toggleShowDemo() {
-        if (showDemo) {
-            // Reset iFrame when closing demo to prevent video from running
-            (document.getElementById("demo-frame") as HTMLIFrameElement).src = projects[index].videoLink;
-        }
         // Prevent scrolling when demo is shown
         document.body.style.overflow = showDemo ? "unset" : "hidden";
-        setShowDemo(!showDemo)
+        setShowDemo(!showDemo);
     }
 
     function paginate(dir: number, i: number | null = null) {
@@ -100,7 +118,10 @@ export default function Projects() {
         return (
             <button
                 onClick={() => paginate(dir)}
-                className={`text-2xl text-gray-500 hover:text-black ${isMobile ? "md:hidden" : "max-md:hidden"}`}
+                className={`
+                    text-2xl text-gray-500 hover:text-black dark:hover:text-gray-400
+                    ${isMobile ? "lg:hidden" : "max-lg:hidden"}
+                `}
             >
                 <i className={`fa fa-arrow-${dir === 1 ? "right" : "left"}`} aria-hidden="true" />
             </button>
@@ -108,7 +129,7 @@ export default function Projects() {
     };
 
     return (
-        <section id="projects" className="space-y-2">
+        <section id="projects" className="space-y-6">
             <div
                 className={`
                     fixed top-0 left-0 w-full h-dvh bg-black/80 backdrop-blur-xs
@@ -117,95 +138,98 @@ export default function Projects() {
                 `}
                 onClick={toggleShowDemo}
             >
-                <iframe id="demo-frame" className="w-full h-full p-20" src={projects[index].videoLink} />
+                {showDemo && <iframe id="demo-frame" className="w-full h-full p-20" src={projects[index].videoLink} />}
             </div>
             <h2 className="text-2xl font-bold">Projects & Works</h2>
-            <div className="flex gap-4 items-center max-md:flex-col">
+            <div className="flex gap-4 items-center max-lg:flex-col">
                 <ArrowButton dir={-1} isMobile={false} />
-                <div className="relative w-full overflow-hidden rounded-3xl shadow-lg">
-                    <div className="relative h-150 dark:bg-gray-900/40 dark:shadow-neutral-950">
-                        <AnimatePresence initial={false} custom={direction}>
-                            <motion.div
-                                key={index}
-                                custom={direction}
-                                initial="enter"
-                                animate="center"
-                                exit="exit"
-                                variants={variants}
-                                transition={{ duration: 0.4, ease: "easeInOut" }}
-                                className="absolute inset-0 flex max-md:flex-col gap-4 max-md:gap-2 p-4 max-md:pt-0"
-                                drag="x"
-                                dragConstraints={{ left: 0, right: 0 }}
-                                dragElastic={0.2}
-                                onDragEnd={(e, { offset, velocity }) => {
-                                    const swipe = swipePower(offset.x, velocity.x);
-                                    if (swipe < -SWIPETHRESHOLD) {
-                                        paginate(1); // swipe left → next
-                                    } else if (swipe > SWIPETHRESHOLD) {
-                                        paginate(-1); // swipe right → prev
-                                    }
-                                }}
-                            >
-                                <img
-                                    className="h-full object-contain max-md:h-50 max-md:object-cover max-md:w-full max-md:object-top"
-                                    src={colorScheme == "light" ? projects[index].images.light : projects[index].images.dark}
-                                    alt={`${projects[index].title} Screenshot`}
-                                />
-                                <div className="flex flex-col gap-6">
-                                    <a
-                                        href={projects[index].link}
-                                        target="_blank"
-                                        className="flex flex-col gap-1 pt-10 max-md:pt-3"
-                                        onMouseEnter={() => setIsHoveringLink(true)}
-                                        onMouseLeave={() => setIsHoveringLink(false)}
+                <div className="relative w-full h-150 overflow-hidden rounded-3xl ring ring-slate-300 dark:ring-neutral-800">
+                    <AnimatePresence initial={false} custom={direction}>
+                        <motion.div
+                            key={index}
+                            custom={direction}
+                            initial="enter"
+                            animate="center"
+                            exit="exit"
+                            variants={variants}
+                            transition={{ duration: 0.4, ease: "easeInOut" }}
+                            className="absolute inset-0 flex max-lg:flex-col gap-4 max-lg:gap-2 p-4 max-lg:pt-0"
+                            drag="x"
+                            dragConstraints={{ left: 0, right: 0 }}
+                            dragElastic={0.2}
+                            onDragEnd={(_, { offset, velocity }) => {
+                                const swipe = swipePower(offset.x, velocity.x);
+                                if (swipe < -SWIPETHRESHOLD) {
+                                    paginate(1);
+                                } else if (swipe > SWIPETHRESHOLD) {
+                                    paginate(-1);
+                                }
+                            }}
+                        >
+                            <img
+                                className="h-full lg:max-w-2/3 object-contain max-lg:h-50 max-lg:object-cover max-lg:w-full max-lg:object-top"
+                                src={colorScheme == "light" ? projects[index].images.light : projects[index].images.dark}
+                                alt={`${projects[index].title} Screenshot`}
+                            />
+                            <div className="flex flex-col gap-6">
+                                <a
+                                    href={projects[index].link}
+                                    target="_blank"
+                                    className="flex flex-col gap-1 pt-10 max-lg:pt-3"
+                                    onMouseEnter={() => setIsHoveringLink(true)}
+                                    onMouseLeave={() => setIsHoveringLink(false)}
+                                >
+                                    <div
+                                        className={`
+                                            flex gap-2 items-center
+                                            origin-bottom-left transition duration-200 ease-out
+                                            ${isHoveringLink && "text-blue-700 dark:text-blue-100 scale-101"}
+                                        `}
                                     >
-                                        <div
-                                            className={`
-                                                flex gap-2 items-center
-                                                origin-bottom-left transition duration-200 ease-out
-                                                ${isHoveringLink && "text-blue-700 dark:text-blue-100 scale-101"}
-                                            `}
-                                        >
-                                            <h6 className="text-xl font-bold">{projects[index].title}</h6>
-                                            <i className="fa fa-external-link" aria-hidden="true" />
-                                        </div>
-                                        <p className="text-sm font-semibold color-subheadline">{projects[index].headline}</p>
-                                    </a>
-                                    <p>{projects[index].description}</p>
-                                    <ul className="flex flex-wrap gap-2">
-                                        {projects[index].tags.map((tag, i) => (
-                                            <li key={i}>
-                                                <span className="color-tag rounded-4xl px-3 py-1 text-sm font-medium ring-1 ring-inset">
-                                                    {tag}
-                                                </span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <button
-                                        className="bg-gray-300 hover:bg-gray-400 w-fit max-md:w-full py-2 px-4 rounded inline-flex gap-3 items-center cursor-pointer"
-                                        onClick={toggleShowDemo}
-                                    >
-                                        <i className="fa-solid fa-video"></i>
-                                        Watch Demo
-                                    </button>
-                                </div>
-                            </motion.div>
-                        </AnimatePresence>
-                    </div>
+                                        <h6 className="text-xl font-bold">{projects[index].title}</h6>
+                                        <i className="fa fa-external-link" aria-hidden="true" />
+                                    </div>
+                                    <p className="text-sm font-semibold color-subheadline">{projects[index].headline}</p>
+                                </a>
+                                <p>{projects[index].description}</p>
+                                <ul className="flex flex-wrap gap-2">
+                                    {projects[index].tags.map((tag, i) => (
+                                        <li key={i}>
+                                            <span className="color-tag rounded-4xl px-3 py-1 text-sm font-medium ring-1 ring-inset">
+                                                {tag}
+                                            </span>
+                                        </li>
+                                    ))}
+                                </ul>
+                                <button
+                                    className={`
+                                        bg-gray-300 hover:bg-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700
+                                        w-fit max-lg:w-full py-2 px-4 rounded inline-flex gap-3 items-center cursor-pointer
+                                    `}
+                                    onClick={toggleShowDemo}
+                                >
+                                    <i className="fa-solid fa-video"></i>
+                                    Watch Demo
+                                </button>
+                            </div>
+                        </motion.div>
+                    </AnimatePresence>
                 </div>
                 <ArrowButton dir={1} isMobile={false} />
-                <div className="flex justify-between w-full px-4 items-center md:hidden">
+                <div className="flex justify-between w-full px-4 items-center lg:hidden">
                     <ArrowButton dir={-1} isMobile={true} />
                     <div className="flex justify-center gap-2">
                         {projects.map((_, i) => (
                             <button
                                 key={i}
                                 onClick={() => paginate(i > index ? 1 : -1, i)}
-                                className={
-                                    `h-2 w-2 rounded-full transition-all
-                                    ${i === index ? "bg-gray-400 scale-125" : "bg-gray-300 hover:bg-gray-400"}
-                                    `
-                                }
+                                className={`
+                                    h-2 w-2 rounded-full transition-all
+                                    ${i === index
+                                        ? "bg-gray-400 dark:bg-gray-300 scale-125"
+                                        : "bg-gray-300 dark:bg-gray-400 hover:bg-gray-400"
+                                    }
+                                `}
                             />
                         ))}
                     </div>
