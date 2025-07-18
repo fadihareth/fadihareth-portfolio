@@ -47,7 +47,7 @@ export default function Experience() {
             <h2 className="text-2xl font-bold">Experience</h2>
             <div className="flex flex-col space-y-8" onMouseLeave={onMouseLeave}>
                 {jobs.map((job) => (
-                    <a key={job.id} href={job.link} target="_blank" onMouseEnter={() => onMouseEnter(job.id)}>
+                    <a key={job.id} href={job.link} target="_blank" onClick={onMouseLeave} onMouseEnter={() => onMouseEnter(job.id)}>
                         <div
                             className={`
                                 flex flex-col space-y-3

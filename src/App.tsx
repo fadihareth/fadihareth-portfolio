@@ -6,9 +6,9 @@ import Projects from "./components/Projects";
 
 export default function App() {
     return (
-        <div className="font-display scroll-smooth bg-white text-black dark:bg-gray-950 dark:text-white">
+        <div className="font-display scroll-smooth bg-white text-black dark:bg-neutral-950 dark:text-white">
             <Navbar />
-            <main className="mx-16 space-y-8">
+            <main className="mx-16 max-lg:mx-8 space-y-8">
                 <Contact />
                 <Experience />
                 <Projects />

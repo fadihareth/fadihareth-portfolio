@@ -45,8 +45,8 @@ const projects = [
         headline: "Manage ad campaigns to run within the app",
         description: `
             Web app built from scratch giving customers a dashboard for creating ad campaigns to run within the
-            Statrat mobile app. Customers can customize the ad with templates and media uploads, and get a breakdown on their
-            ad's performance. Ads are generated as HTML templates allowing for easy embedding in both iOS and Android.
+            Statrat mobile app. Customers can customize their campaign and get a analytics breakdown on it's performance.
+            Ads are generated as HTML templates allowing for easy embedding in both iOS and Android.
         `,
         link: "https://dashboard.statratapp.com",
         videoLink: "https://www.youtube.com/embed/vhUt21N1vYA",
@@ -54,7 +54,7 @@ const projects = [
             light: "src/assets/statrat_dashboard.png",
             dark: "src/assets/statrat_dashboard_dark.png"
         },
-        tags: ["React", "Vite", "TypeScript"]
+        tags: ["React", "Vite", "TypeScript", "HTML"]
     }
 ];
 
@@ -133,17 +133,17 @@ export default function Projects() {
             <div
                 className={`
                     fixed top-0 left-0 w-full h-dvh bg-black/80 backdrop-blur-xs
-                    duration-300 ease-out transition
+                    duration-300 ease-in-out transition max-md:p-10 p-20
                     ${showDemo ? "opacity-100 z-100" : "opacity-0 pointer-events-none"}
                 `}
                 onClick={toggleShowDemo}
             >
-                {showDemo && <iframe id="demo-frame" className="w-full h-full p-20" src={projects[index].videoLink} />}
+                {showDemo && <iframe id="demo-frame" className="w-full h-full ring ring-slate-600" src={projects[index].videoLink} />}
             </div>
-            <h2 className="text-2xl font-bold">Projects & Works</h2>
+            <h2 className="text-2xl font-bold">Projects</h2>
             <div className="flex gap-4 items-center max-lg:flex-col">
                 <ArrowButton dir={-1} isMobile={false} />
-                <div className="relative w-full h-150 overflow-hidden rounded-3xl ring ring-slate-300 dark:ring-neutral-800">
+                <div className="relative w-full h-150 max-xs:h-170 overflow-hidden rounded-3xl ring ring-slate-300 dark:ring-neutral-800">
                     <AnimatePresence initial={false} custom={direction}>
                         <motion.div
                             key={index}
@@ -171,11 +171,11 @@ export default function Projects() {
                                 src={colorScheme == "light" ? projects[index].images.light : projects[index].images.dark}
                                 alt={`${projects[index].title} Screenshot`}
                             />
-                            <div className="flex flex-col gap-6">
+                            <div className="flex flex-col gap-6 pt-10 max-lg:pt-3">
                                 <a
                                     href={projects[index].link}
                                     target="_blank"
-                                    className="flex flex-col gap-1 pt-10 max-lg:pt-3"
+                                    className="flex flex-col gap-1"
                                     onMouseEnter={() => setIsHoveringLink(true)}
                                     onMouseLeave={() => setIsHoveringLink(false)}
                                 >
