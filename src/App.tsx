@@ -1,7 +1,8 @@
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Experience from "./components/Experience";
+import About from "./components/About";
 import Contact from "./components/Contact";
+import Experience from "./components/Experience";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 
 export default function App() {
@@ -10,6 +11,7 @@ export default function App() {
             <Navbar />
             <main className="mx-16 max-lg:mx-8 space-y-8">
                 <Contact />
+                <About />
                 <Experience />
                 <Projects />
             </main>
