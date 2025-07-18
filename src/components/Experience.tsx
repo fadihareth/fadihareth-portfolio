@@ -42,9 +42,9 @@ export default function Experience() {
     }
 
     return (
-        <section id="experience" className="space-y-6">
+        <section id="experience" className="space-y-4">
             <h2 className="text-2xl font-bold">Experience</h2>
-            <div className="flex flex-col space-y-8" onMouseLeave={onMouseLeave}>
+            <div className="flex flex-col space-y-4" onMouseLeave={onMouseLeave}>
                 {jobs.map((job) => (
                     <a key={job.id} href={job.link} target="_blank" onClick={onMouseLeave} onMouseEnter={() => onMouseEnter(job.id)}>
                         <div

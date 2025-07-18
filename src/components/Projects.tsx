@@ -136,7 +136,7 @@ export default function Projects() {
     };
 
     return (
-        <section id="projects" className="space-y-6">
+        <section id="projects" className="space-y-4">
             <div
                 className={`
                     fixed top-0 left-0 w-full h-dvh bg-black/80 backdrop-blur-xs

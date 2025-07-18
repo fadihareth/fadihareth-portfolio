@@ -6,8 +6,8 @@ export default function Navbar() {
 
     const links = [
         { id: "about", text: "About" },
-        { id: "projects", text: "Projects" },
         { id: "experience", text: "Experience" },
+        { id: "projects", text: "Projects" },
     ];
 
     function scrollToSection(id: string) {
