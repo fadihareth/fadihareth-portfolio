@@ -1,6 +1,13 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { isMobile } from 'react-device-detect';
+import { isMobile } from "react-device-detect";
+import {
+    damageCalc,
+    damageCalcDark,
+    statratApp,
+    statratDashboard,
+    statratDashboardDark
+} from "../assets";
 
 const projects = [
     {
@@ -16,8 +23,8 @@ const projects = [
         link: "https://apps.apple.com/ca/app/damage-calculator/id1554958775",
         videoLink: "https://www.youtube.com/embed/82AjCKzhnS4",
         images: {
-            light: "src/assets/damage_calculator.png",
-            dark: "src/assets/damage_calculator_dark.png"
+            light: damageCalc,
+            dark: damageCalcDark
         },
         tags: ["SwiftUI", "Swift", "Python"]
     },
@@ -35,8 +42,8 @@ const projects = [
         link: "https://apps.apple.com/ca/app/statrat-baseball/id506977885",
         videoLink: "https://www.youtube.com/embed/XTtXMZCfENw",
         images: {
-            light: "src/assets/statrat_app.png",
-            dark: "src/assets/statrat_app.png"
+            light: statratApp,
+            dark: statratApp
         },
         tags: ["SwiftUI", "Swift"]
     },
@@ -52,8 +59,8 @@ const projects = [
         link: "https://dashboard.statratapp.com",
         videoLink: "https://www.youtube.com/embed/vhUt21N1vYA",
         images: {
-            light: "src/assets/statrat_dashboard.png",
-            dark: "src/assets/statrat_dashboard_dark.png"
+            light: statratDashboard,
+            dark: statratDashboardDark
         },
         tags: ["React", "Vite", "TypeScript", "HTML"]
     }
