@@ -46,7 +46,7 @@ const projects = [
         headline: "Manage ad campaigns to run within the app",
         description: `
             Web app built from scratch giving customers a dashboard for creating ad campaigns to run within the
-            Statrat mobile app. Customers can customize their campaign and get a analytics breakdown on it's performance.
+            Statrat mobile app. Customers can customize their campaign and get an analytics breakdown on it's performance.
             Ads are generated as HTML templates allowing for easy embedding in both iOS and Android.
         `,
         link: "https://dashboard.statratapp.com",

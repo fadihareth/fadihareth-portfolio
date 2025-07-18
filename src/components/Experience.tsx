@@ -8,9 +8,8 @@ const jobs = [
         period: "May 2024 - May 2025",
         bullets: [
             "Took over full responsibility of the iOS app, creating new features and modernizing the user experience.",
-            "Leveraged AI tools to increase development efficiency and readily introduce unit testing into the project.",
             "Collaborated in designing the backend and prototyping the frontend UI, ensuring a cohesive design between the iOS and Android app.",
-            "Lead new initiatives by building web apps from scratch, allowing the company to expand into new markets by providing business partners dashboards for tracking analytics and stats.",
+            "Lead new initiatives by building web apps from scratch, opening new revenue sources by providing business partners dashboards for creating ad campaigns and tracking stats.",
         ],
         link: "https://www.statrat.ca",
         tags: ["SwiftUI", "Swift", "React", "TypeScript", "Vite"]
