@@ -55,10 +55,10 @@ export default function Experience() {
                             `}
                         >
                             <div>
-                                <p className={`${hoverId === job.id && "text-blue-700 dark:text-blue-100"} font-semibold`}>
+                                <p className={`${hoverId === job.id && "text-highlight"} font-semibold`}>
                                     {job.role} - {job.company} <i className="fa fa-external-link" aria-hidden="true" />
                                 </p>
-                                <p className="text-sm color-subheadline">{job.period}</p>
+                                <p className="text-sm text-tertiary">{job.period}</p>
                             </div>
                             <ul className="list-disc ml-6">
                                 {job.bullets.map((bullet, i) => (
@@ -70,7 +70,7 @@ export default function Experience() {
                             <ul className="flex flex-wrap gap-2">
                                 {job.tags.map((tag, i) => (
                                     <li key={i}>
-                                        <span className="color-tag rounded-4xl px-3 py-1 text-sm font-medium ring-1 ring-inset">
+                                        <span className="tag px-3 py-1 text-sm font-medium">
                                             {tag}
                                         </span>
                                     </li>

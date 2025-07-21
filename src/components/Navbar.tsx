@@ -34,9 +34,8 @@ export default function Navbar() {
         <header
             className={`
                 sticky top-0 z-50 flex px-16 max-lg:px-8 items-center
-                bg-white/90 dark:bg-neutral-950/75 backdrop-blur
                 transition-all duration-300 ease-out
-                ${collapsed ? "h-18 shadow" : "h-[150px]"}
+                ${collapsed ? "h-18 bg-primary/90 backdrop-blur brightness-90" : "h-[150px]"}
             `}
         >
             <div className={`flex grow items-center justify-between`}>
@@ -58,7 +57,7 @@ export default function Navbar() {
                     {links.map(({ id, text }) => (
                         <li key={id}>
                             <button
-                                className="font-medium hover:text-slate-500 transition cursor-pointer"
+                                className="font-medium hover:text-highlight cursor-pointer"
                                 onClick={() => scrollToSection(id)}
                             >
                                 {text}

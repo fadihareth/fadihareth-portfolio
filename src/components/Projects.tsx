@@ -13,7 +13,7 @@ const projects = [
     {
         id: 0,
         title: "Damage Calculator",
-        headline: "Native iOS app for quick Pokémon damage calculations",
+        headline: "Native app for quick Pokémon calculations",
         description: `
             Individually developed an interactive calculator for a video game series as a native iOS app.
             Compacted a feature-heavy app into an intuitive and mobile-friendly experience under Apple guidelines.
@@ -133,7 +133,7 @@ export default function Projects() {
             <button
                 onClick={() => paginate(dir)}
                 className={`
-                    text-2xl text-gray-500 hover:text-black dark:hover:text-gray-400
+                    text-2xl text-tertiary hover:text-highlight cursor-pointer
                     ${isMobile ? "lg:hidden" : "max-lg:hidden"}
                 `}
             >
@@ -146,18 +146,18 @@ export default function Projects() {
         <section id="projects" className="space-y-4">
             <div
                 className={`
-                    fixed top-0 left-0 w-full h-dvh bg-black/80 backdrop-blur-xs
+                    fixed top-0 left-0 w-full h-dvh z-100 bg-black/60 backdrop-blur-xs
                     duration-300 ease-in-out transition max-md:p-10 p-20
-                    ${showDemo ? "opacity-100 z-100" : "opacity-0 pointer-events-none"}
+                    ${showDemo ? "opacity-100" : "opacity-0 pointer-events-none"}
                 `}
                 onClick={toggleShowDemo}
             >
-                {showDemo && <iframe id="demo-frame" className="w-full h-full ring ring-slate-600" src={projects[index].videoLink} />}
+                {showDemo && <iframe id="demo-frame" className="w-full h-full ring ring-secondary" src={projects[index].videoLink} />}
             </div>
             <h2 className="text-2xl font-bold">Projects</h2>
             <div className="flex gap-4 items-center max-lg:flex-col">
                 <ArrowButton dir={-1} isMobile={false} />
-                <div className="relative w-full h-150 max-xs:h-170 overflow-hidden rounded-3xl ring ring-slate-300 dark:ring-neutral-800">
+                <div className="relative w-full h-150 max-xs:h-170 overflow-hidden rounded-3xl ring ring-secondary bg-white/3">
                     <AnimatePresence initial={false} custom={direction}>
                         <motion.div
                             key={index}
@@ -167,7 +167,7 @@ export default function Projects() {
                             exit="exit"
                             variants={variants}
                             transition={{ duration: 0.4, ease: "easeInOut" }}
-                            className="absolute inset-0 flex max-lg:flex-col gap-4 max-lg:gap-2 p-4 max-lg:pt-0"
+                            className="absolute inset-0 flex max-lg:flex-col gap-4 max-lg:gap-2 p-4 max-lg:pt-2"
                             drag="x"
                             dragConstraints={{ left: 0, right: 0 }}
                             dragElastic={0.2}
@@ -197,34 +197,34 @@ export default function Projects() {
                                         className={`
                                             flex gap-2 items-center
                                             origin-bottom-left transition duration-200 ease-out
-                                            ${isHoveringLink && "text-blue-700 dark:text-blue-100 scale-101"}
+                                            ${isHoveringLink && "text-highlight scale-101"}
                                         `}
                                     >
                                         <h6 className="text-xl font-bold">{projects[index].title}</h6>
                                         <i className="fa fa-external-link" aria-hidden="true" />
                                     </div>
-                                    <p className="text-sm font-semibold color-subheadline">{projects[index].headline}</p>
+                                    <p className="text-sm font-semibold text-tertiary">{projects[index].headline}</p>
                                 </a>
                                 <p>{projects[index].description}</p>
                                 <ul className="flex flex-wrap gap-2">
                                     {projects[index].tags.map((tag, i) => (
                                         <li key={i}>
-                                            <span className="color-tag rounded-4xl px-3 py-1 text-sm font-medium ring-1 ring-inset">
+                                            <span className="tag px-3 py-1 text-sm font-medium">
                                                 {tag}
                                             </span>
                                         </li>
                                     ))}
                                 </ul>
-                                <button
+                                <div
                                     className={`
-                                        bg-gray-300 hover:bg-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700
-                                        w-fit max-lg:w-full py-2 px-4 rounded inline-flex gap-3 items-center cursor-pointer
+                                        tag hover:bg-tertiary py-2 px-4
+                                        w-fit max-lg:w-full inline-flex gap-3 items-center cursor-pointer
                                     `}
                                     onClick={toggleShowDemo}
                                 >
                                     <i className="fa-solid fa-video"></i>
                                     Watch Demo
-                                </button>
+                                </div>
                             </div>
                         </motion.div>
                     </AnimatePresence>
@@ -240,8 +240,8 @@ export default function Projects() {
                                 className={`
                                     h-2 w-2 rounded-full transition-all
                                     ${i === index
-                                        ? "bg-gray-400 dark:bg-gray-300 scale-125"
-                                        : "bg-gray-300 dark:bg-gray-400 hover:bg-gray-400"
+                                        ? "bg-highlight scale-125"
+                                        : "bg-secondary hover:bg-tertiary"
                                     }
                                 `}
                             />
