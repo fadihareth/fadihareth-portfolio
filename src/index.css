@@ -24,6 +24,6 @@
     }
 
     .gradient-bg {
-        @apply bg-gradient-to-b from-primary via-10% to-slate-950/90;
+        @apply bg-gradient-to-b from-primary via-10% to-slate-950;
     }
 }
