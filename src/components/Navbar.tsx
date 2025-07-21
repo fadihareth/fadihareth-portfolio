@@ -43,13 +43,13 @@ export default function Navbar() {
                     className={`
                         flex ${collapsed ? "flex-row items-baseline gap-4 max-xs:gap-2" : "flex-col items-start"}
                         origin-left transition-transform duration-300 ease-out
-                        ${collapsed ? "scale-65 max-xs:scale-90" : "scale-100"}
+                        ${collapsed ? "scale-95" : "scale-150"}
                     `}
                 >
-                    <h1 className={`font-bold text-5xl ${collapsed && "max-xs:text-2xl"}`}>
+                    <h1 className="font-bold text-3xl">
                         Fadi Hareth
                     </h1>
-                    <p className={`text-2xl ${collapsed && "max-xs:text-base"}`}>
+                    <p className={`text-sm ${collapsed && "max-xs:text-base"}`}>
                         Full Stack Developer
                     </p>
                 </div>
