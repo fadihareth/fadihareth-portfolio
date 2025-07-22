@@ -15,10 +15,10 @@ const projects = [
         title: "Damage Calculator",
         headline: "Native app for quick Pokémon calculations",
         description: `
-            Individually developed an interactive calculator for a video game series as a native iOS app.
-            Compacted a feature-heavy app into an intuitive and mobile-friendly experience under Apple guidelines.
-            Still maintained after ${new Date().getFullYear() - 2021} years with updates introducing major
-            improvements and applying user feedback.
+            Individually designed and developed an interactive calculator for a video game series as a native iOS app.
+            Compacted a complex, feature-rich tool into an intuitive and mobile-friendly interface under Apple's design
+            guidelines. Maintained and iterated on the app for ${new Date().getFullYear() - 2021}+ years, delivering major
+            improvements based on user feedback
         `,
         link: "https://apps.apple.com/ca/app/damage-calculator/id1554958775",
         videoLink: "https://www.youtube.com/embed/82AjCKzhnS4",
