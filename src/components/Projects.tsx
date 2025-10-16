@@ -24,7 +24,9 @@ const projects = [
         videoLink: "https://www.youtube.com/embed/82AjCKzhnS4",
         images: {
             light: damageCalc,
-            dark: damageCalcDark
+            dark: damageCalcDark,
+            width: 1470,
+            height: 3000
         },
         tags: ["SwiftUI", "Swift", "Python"]
     },
@@ -43,7 +45,9 @@ const projects = [
         videoLink: "https://www.youtube.com/embed/XTtXMZCfENw",
         images: {
             light: statratApp,
-            dark: statratApp
+            dark: statratApp,
+            width: 1350,
+            height: 2760
         },
         tags: ["SwiftUI", "Swift"]
     },
@@ -60,7 +64,9 @@ const projects = [
         videoLink: "https://www.youtube.com/embed/vhUt21N1vYA",
         images: {
             light: statratDashboard,
-            dark: statratDashboardDark
+            dark: statratDashboardDark,
+            width: 3248,
+            height: 1972
         },
         tags: ["React", "Vite", "TypeScript", "HTML"]
     }
@@ -181,6 +187,8 @@ export default function Projects() {
                             }}
                         >
                             <img
+                                width={projects[index].images.width}
+                                height={projects[index].images.height}
                                 className="h-full lg:max-w-2/3 object-contain max-lg:h-50 max-lg:object-cover max-lg:w-full max-lg:object-top"
                                 src={colorScheme == "light" ? projects[index].images.light : projects[index].images.dark}
                                 alt={`${projects[index].title} Screenshot`}
