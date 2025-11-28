@@ -7,9 +7,9 @@ const jobs = [
         company: "Statrat",
         period: "May 2024 - May 2025",
         bullets: [
-            "Took full ownership of the iOS app, creating new features and modernizing the user experience to match current design standards.",
-            "Collaborated closely on prototyping the backend and frontend, ensuring design consistency between the iOS and Android app.",
-            "Initiated and developed web apps from scratch, enabling new revenue sources by providing dashboards for business partners to manage ad campaigns and monitor performance.",
+            "Took full ownership of the native iOS app with thousands of active users, creating new features and modernizing the user experience to match current design standards.",
+            "Collaborated closely on prototyping the backend and frontend, ensuring UI/UX consistency between the iOS and Android app.",
+            "Initiated and developed web apps from scratch, creating advertiser dashboards that opened up new revenue channels and supported 10+ business partners.",
         ],
         link: "https://www.statrat.ca",
         tags: ["SwiftUI", "Swift", "React", "TypeScript", "Vite"]
@@ -20,10 +20,10 @@ const jobs = [
         company: "ApplyBoard",
         period: "Sep 2021 - Sep 2022",
         bullets: [
-            "Built and maintained full-stack features for a web application with Ruby serving REST API and a React frontend.",
-            "Developed internal tools to streamline content management, boosting operational efficiency for hundreds of employees.",
-            "Cooperated with a team using AGILE methodologies to deliver and iterate on new features quickly and effectively.",
-            "Wrote robust unit and end-to-end tests with Cypress to ensure high test coverage and long-term code reliability.",
+            "Built full-stack features for a web app with Ruby serving REST API and a React frontend.",
+            "Developed internal tools to streamline content management, saving 10+ hours per week for CX.",
+            "Cooperated with a team using AGILE methodologies to deliver and iterate on new features with multiple deployments to production every week.",
+            "Wrote robust unit and end-to-end Cypress tests to ensure 80%+ coverage and long-term code reliability.",
         ],
         link: "https://www.applyboard.com/search",
         tags: ["React", "JavaScript", "Ruby", "Ruby on Rails", "Python", "MySQL"]
