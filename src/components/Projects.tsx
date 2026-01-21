@@ -4,6 +4,7 @@ import { isMobile } from "react-device-detect";
 import {
     damageCalc,
     damageCalcDark,
+    optcgleaks,
     statratApp,
     statratDashboard,
     statratDashboardDark
@@ -32,6 +33,25 @@ const projects = [
     },
     {
         id: 1,
+        title: "OPTCG Leaks Web App",
+        headline: "Compilating card reveals in one space",
+        description: `
+            Created a lightweight web app that tracks newly revealed One Piece Trading Card Game cards ahead of official
+            card list releases. Developed with Svelte and TypeScript, with data and assets hosted on AWS.
+            Automated daily card updates using custom Python and shell scripts to streamline data deployment.
+        `,
+        link: "https://optcgleaks.com",
+        videoLink: "https://www.youtube.com/embed/s2kqrl_6_2I?si=iN7mo1A6uhQ1eA8p",
+        images: {
+            light: optcgleaks,
+            dark: optcgleaks,
+            width: 3248,
+            height: 1972
+        },
+        tags: ["Svelte", "TypeScript", "TailwindCSS"]
+    },
+    {
+        id: 2,
         title: "Statrat Baseball iOS App",
         headline: "Social stat tracking platform for baseball players",
         description: `
@@ -52,7 +72,7 @@ const projects = [
         tags: ["SwiftUI", "Swift"]
     },
     {
-        id: 2,
+        id: 3,
         title: "Statrat Advertiser Dashboard",
         headline: "Manage ad campaigns to run within the app",
         description: `
