@@ -4,6 +4,7 @@ import { isMobile } from "react-device-detect";
 import {
     damageCalc,
     damageCalcDark,
+    genshinTracker,
     optcgleaks,
     statratApp,
     statratDashboard,
@@ -52,6 +53,24 @@ const projects = [
     },
     {
         id: 2,
+        title: "Character Tracker Web App",
+        headline: "Full-stack app for progress tracking",
+        description: `
+            Built a full-stack web application using Svelte and TypeScript with a GraphQL backend and SQLite database,
+            enabling users to create accounts and track progress on custom video game character builds. Designed and
+            implemented both the frontend and backend architecture, focusing on efficient data management and a smooth user experience.
+        `,
+        videoLink: "https://www.youtube.com/embed/J8RgBEFnkF0?si=mPHsmzYn3LjVxiEW",
+        images: {
+            light: genshinTracker,
+            dark: genshinTracker,
+            width: 3248,
+            height: 1972
+        },
+        tags: ["Svelte", "TypeScript", "TailwindCSS", "GraphQL", "Node", "SQLite"]
+    },
+    {
+        id: 3,
         title: "Statrat Baseball iOS App",
         headline: "Social stat tracking platform for baseball players",
         description: `
@@ -72,7 +91,7 @@ const projects = [
         tags: ["SwiftUI", "Swift"]
     },
     {
-        id: 3,
+        id: 4,
         title: "Statrat Advertiser Dashboard",
         headline: "Manage ad campaigns to run within the app",
         description: `
