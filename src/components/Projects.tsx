@@ -60,6 +60,7 @@ const projects = [
             enabling users to create accounts and track progress on builds for the video game Genshin Impact. Designed and
             implemented both the frontend and backend architecture.
         `,
+        link: "https://github.com/fadihareth/genshin-progress-tracker",
         videoLink: "https://www.youtube.com/embed/J8RgBEFnkF0?si=mPHsmzYn3LjVxiEW",
         images: {
             light: genshinTracker,
@@ -67,7 +68,7 @@ const projects = [
             width: 3248,
             height: 1972
         },
-        tags: ["Svelte", "TypeScript", "TailwindCSS", "GraphQL", "Node", "SQLite"]
+        tags: ["Svelte", "TypeScript", "TailwindCSS", "GraphQL", "Node.js", "SQLite"]
     },
     {
         id: 3,
