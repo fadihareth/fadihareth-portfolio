@@ -57,8 +57,8 @@ const projects = [
         headline: "Full-stack app for progress tracking",
         description: `
             Built a full-stack web application using Svelte and TypeScript with a GraphQL backend and SQLite database,
-            enabling users to create accounts and track progress on custom video game character builds. Designed and
-            implemented both the frontend and backend architecture, focusing on efficient data management and a smooth user experience.
+            enabling users to create accounts and track progress on builds for the video game Genshin Impact. Designed and
+            implemented both the frontend and backend architecture.
         `,
         videoLink: "https://www.youtube.com/embed/J8RgBEFnkF0?si=mPHsmzYn3LjVxiEW",
         images: {
