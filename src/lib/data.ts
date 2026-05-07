@@ -27,7 +27,7 @@ export const jobs: Job[] = [
 		bullets: [
 			'Took full ownership of the native iOS app with thousands of active users, creating new features and modernizing the user experience to match current design standards.',
 			'Collaborated closely on prototyping the backend and frontend, ensuring UI/UX consistency between the iOS and Android app.',
-			'Initiated and developed web apps from scratch, creating advertiser dashboards that opened up new revenue channels and supported 10+ business partners.'
+			'Initiated and developed web apps from scratch, creating advertiser dashboards that opened up new revenue channels and supported several business partners.'
 		],
 		link: 'https://www.statrat.ca',
 		tags: ['SwiftUI', 'Swift', 'React', 'TypeScript', 'Vite']
@@ -79,7 +79,7 @@ export function getProjects(nowYear: number): Project[] {
 		},
 		{
 			slug: 'optcg-leaks',
-			title: 'OPTCG Leaks Web App',
+			title: 'OPTCG Leaks',
 			headline: 'Compilating card reveals in one space',
 			description:
 				'Created a lightweight web app that tracks newly revealed One Piece Trading Card Game cards ahead of official card list releases. Developed with Svelte and TypeScript, with data and assets hosted on AWS. Automated daily card updates using custom Python and shell scripts to streamline data deployment.',
@@ -93,8 +93,8 @@ export function getProjects(nowYear: number): Project[] {
 		},
 		{
 			slug: 'genshin-tracker',
-			title: 'Character Tracker Web App',
-			headline: 'Full-stack app for progress tracking',
+			title: 'Character Tracker',
+			headline: 'Full-stack web app for progress tracking',
 			description:
 				'Built a full-stack web application using Svelte and TypeScript with a GraphQL backend and SQLite database, enabling users to create accounts and track progress on builds for the video game Genshin Impact. Designed and implemented both the frontend and backend architecture.',
 			link: 'https://github.com/fadihareth/genshin-progress-tracker',
