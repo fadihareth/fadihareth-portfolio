@@ -42,7 +42,7 @@
 		: 'border-stone-950'}"
 >
 	<div
-		class="mx-auto flex max-w-5xl px-5 py-4 transition-[padding] duration-300 justify-between md:px-8"
+		class="mx-auto flex md:max-w-5xl px-5 py-4 transition-[padding] duration-300 justify-between md:px-8"
 	>
 		<button type="button" onclick={() => scrollToSection('top')} class="text-left group">
 			<span class="block font-serif text-2xl tracking-tight text-stone-50 transition group-hover:text-cyan-200/95 md:text-[1.65rem]">
@@ -72,10 +72,10 @@
 			Building thoughtful software
 			<span class="text-cyan-400/90">across mobile & web.</span>
 		</p>
-		<p class="mb-10 max-w-xl text-lg text-stone-400">
+		<p class="mb-6 max-w-xl text-lg text-stone-400">
 			I care about clear product experiences and code that stays maintainable as products grow.
 		</p>
-		<div class="flex flex-wrap items-center gap-4">
+		<div class="flex flex-wrap items-center gap-x-4 gap-y-2">
 			<a href={site.links.linkedin} target="_blank" rel="noopener noreferrer" class="link-base link-bordered">
 				<svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
 					<path
@@ -96,7 +96,7 @@
 			</a>
 			<a
 				href="mailto:{site.email}"
-				class="link-base"
+				class="link-base px-2"
 			>
 				<svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
 					<path
