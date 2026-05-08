@@ -42,7 +42,7 @@
 		: 'border-stone-950'}"
 >
 	<div
-		class="mx-auto flex md:max-w-5xl px-5 py-4 transition-[padding] duration-300 justify-between md:px-8"
+		class="mx-auto flex max-w-5xl px-5 py-4 transition-[padding] duration-300 justify-between md:px-8"
 	>
 		<button type="button" onclick={() => scrollToSection('top')} class="text-left group">
 			<span class="block font-serif text-2xl tracking-tight text-stone-50 transition group-hover:text-cyan-200/95 md:text-[1.65rem]">
@@ -50,7 +50,7 @@
 			</span>
 			<span class="text-xs font-medium uppercase tracking-[0.2em] text-stone-500">{site.title}</span>
 		</button>
-		<nav class="flex flex-wrap items-center gap-x-5 justify-end max-sm:opacity-0" aria-label="Page sections">
+		<nav class="flex flex-wrap items-center gap-x-5 justify-end max-sm:hidden" aria-label="Page sections">
 			{#each nav as item}
 				<button
 					type="button"
